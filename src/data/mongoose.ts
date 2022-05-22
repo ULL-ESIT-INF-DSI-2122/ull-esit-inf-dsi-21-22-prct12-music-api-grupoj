@@ -1,8 +1,8 @@
 import {connect} from 'mongoose';
 
-const mongoDBUrl = process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/grupojapp';
+const mongodbUrl = process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/grupojapp';
 
-connect(mongoDBUrl, {
+connect(mongodbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
