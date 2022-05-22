@@ -655,4 +655,4 @@ connect(mongoDBUrl, {
 
 El proyecto estará desplegado en la dirección https://grupojapp.herokuapp.com/ mediante el uso de heruko, y estará conectado a una base de daatos de mongoDB de forma que se pueda hacer un seguimiento de los cambios de la misma.
 
-Para comprobar su correcto funcionamiento se han hecho pruebas con la extensión thunder client, tal y como se muestra en el vídeo explicativo de la práctica.
+Para comprobar su correcto funcionamiento se han hecho pruebas con la extensión thunder client, comprobando todos los diferentes estados que puede devolver cada punto de acceso.

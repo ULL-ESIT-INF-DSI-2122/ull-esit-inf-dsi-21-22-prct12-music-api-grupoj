@@ -1,5 +1,8 @@
 import {Document, model, Schema} from 'mongoose';
 
+/**
+ * Representa los atributos de un artista
+ */
 export interface artistInterface extends Document {
   name: string,
   genres: string[],
@@ -7,6 +10,9 @@ export interface artistInterface extends Document {
   rep: number
 }
 
+/**
+ * Squema de un artista para ser alamcenado en la base de datos
+ */
 const artistSchema = new Schema<artistInterface>({
   name: {
     type: String,
@@ -31,4 +37,7 @@ const artistSchema = new Schema<artistInterface>({
   },
 });
 
+/**
+ * Declaración del modelo de datos de un artista
+ */
 export const artistModel = model<artistInterface>('artist', artistSchema);

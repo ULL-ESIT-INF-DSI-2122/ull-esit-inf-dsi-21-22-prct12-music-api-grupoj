@@ -1,5 +1,8 @@
 import {Document, model, Schema} from 'mongoose';
 
+/**
+ * Representa los atributos de una playlist
+ */
 export interface playlistInterface extends Document {
   name: string,
   genre: string[],
@@ -7,6 +10,9 @@ export interface playlistInterface extends Document {
   lenght: string
 }
 
+/**
+ * Squema de una playlist para ser alamcenado en la base de datos
+ */
 const playlistSchema = new Schema<playlistInterface>({
   name: {
     type: String,
@@ -31,5 +37,8 @@ const playlistSchema = new Schema<playlistInterface>({
   },
 });
 
+/**
+ * Declaración del modelo de datos de una playlist
+ */
 export const playlistModel =
   model<playlistInterface>('playlist', playlistSchema);

@@ -3,9 +3,15 @@ import {artistModel} from '../models/artist';
 import {playlistModel} from '../models/playlist';
 import {songModel} from '../models/song';
 
+/**
+ * Router encargado de añadir un elementos que reciba en las peticiones
+ */
 // eslint-disable-next-line new-cap
 export const postRouter = express.Router();
 
+/**
+ * Añade una canción a la base de datos
+ */
 postRouter.post('/song', async (req, res) => {
   // eslint-disable-next-line new-cap
   const song = new songModel(req.body);
@@ -17,6 +23,9 @@ postRouter.post('/song', async (req, res) => {
   }
 });
 
+/**
+ * Añade un artista a la base de datos
+ */
 postRouter.post('/artist', async (req, res) => {
   // eslint-disable-next-line new-cap
   const artist = new artistModel(req.body);
@@ -28,6 +37,10 @@ postRouter.post('/artist', async (req, res) => {
   }
 });
 
+
+/**
+ * Añade una playlist a la base de datos
+ */
 postRouter.post('/playlist', async (req, res) => {
   // eslint-disable-next-line new-cap
   const playlist = new playlistModel(req.body);

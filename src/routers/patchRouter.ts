@@ -3,9 +3,15 @@ import {artistModel} from '../models/artist';
 import {playlistModel} from '../models/playlist';
 import {songModel} from '../models/song';
 
+/**
+ * Router encargado de modificar un elementos que reciba en las peticiones
+ */
 // eslint-disable-next-line new-cap
 export const patchRouter = express.Router();
 
+/**
+ * Modifica una canción en la base de datos
+ */
 patchRouter.patch('/song', async (req, res) => {
   if (!req.query.name) {
     return res.status(400).send({
@@ -36,6 +42,9 @@ patchRouter.patch('/song', async (req, res) => {
   }
 });
 
+/**
+ * Modifica una canción por id en la base de datos
+ */
 patchRouter.patch('/song/:id', async (req, res) => {
   const allowedUpdates = ['name', 'genres', 'songs', 'rep'];
   const actualUpdates = Object.keys(req.body);
@@ -61,6 +70,9 @@ patchRouter.patch('/song/:id', async (req, res) => {
   }
 });
 
+/**
+ * Modifica un artista en la base de datos
+ */
 patchRouter.patch('/artist', async (req, res) => {
   if (!req.query.name) {
     return res.status(400).send({
@@ -91,6 +103,9 @@ patchRouter.patch('/artist', async (req, res) => {
   }
 });
 
+/**
+ * Modifica un artista por id en la base de datos
+ */
 patchRouter.patch('/artist/:id', async (req, res) => {
   const allowedUpdates = ['name', 'genres', 'songs', 'rep'];
   const actualUpdates = Object.keys(req.body);
@@ -116,6 +131,9 @@ patchRouter.patch('/artist/:id', async (req, res) => {
   }
 });
 
+/**
+ * Modifica una playlist en la base de datos
+ */
 patchRouter.patch('/playlist', async (req, res) => {
   if (!req.query.name) {
     return res.status(400).send({
@@ -146,6 +164,9 @@ patchRouter.patch('/playlist', async (req, res) => {
   }
 });
 
+/**
+ * Modifica una playlist por id en la base de datos
+ */
 patchRouter.patch('/playlist/:id', async (req, res) => {
   const allowedUpdates = ['name', 'genres', 'songs', 'rep'];
   const actualUpdates = Object.keys(req.body);

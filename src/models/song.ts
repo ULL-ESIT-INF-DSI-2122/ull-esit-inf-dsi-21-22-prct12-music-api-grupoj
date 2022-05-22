@@ -1,5 +1,8 @@
 import {Document, model, Schema} from 'mongoose';
 
+/**
+ * Representa los atributos de una canción
+ */
 export interface songInterface extends Document {
   name: string,
   genre: string[],
@@ -9,6 +12,9 @@ export interface songInterface extends Document {
   rep: number
 }
 
+/**
+ * Squema de una canción para ser alamcenado en la base de datos
+ */
 const songSchema = new Schema<songInterface>({
   name: {
     type: String,
@@ -43,4 +49,7 @@ const songSchema = new Schema<songInterface>({
   },
 });
 
+/**
+ * Declaración del modelo de datos de una canción
+ */
 export const songModel = model<songInterface>('song', songSchema);

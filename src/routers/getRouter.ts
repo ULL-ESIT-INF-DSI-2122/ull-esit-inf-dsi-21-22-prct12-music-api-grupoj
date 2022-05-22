@@ -3,9 +3,15 @@ import {artistModel} from '../models/artist';
 import {playlistModel} from '../models/playlist';
 import {songModel} from '../models/song';
 
+/**
+ * Router encargado de buscar un elementos que reciba en las peticiones
+ */
 // eslint-disable-next-line new-cap
 export const getRouter = express.Router();
 
+/**
+ * Busca una canción en la base de datos
+ */
 getRouter.get('/song', async (req, res) => {
   const filter = req.query.name?{name: req.query.name.toString()}:{};
   try {
@@ -19,6 +25,9 @@ getRouter.get('/song', async (req, res) => {
   }
 });
 
+/**
+ * Busca una canción por id en la base de datos
+ */
 getRouter.get('/song/:id', async (req, res) => {
   try {
     const song = await songModel.findById(req.params.id);
@@ -31,6 +40,9 @@ getRouter.get('/song/:id', async (req, res) => {
   }
 });
 
+/**
+ * Busca un artista en la base de datos
+ */
 getRouter.get('/artist', async (req, res) => {
   const filter = req.query.name?{name: req.query.name.toString()}:{};
   try {
@@ -44,6 +56,9 @@ getRouter.get('/artist', async (req, res) => {
   }
 });
 
+/**
+ * Busca un artista por id en la base de datos
+ */
 getRouter.get('/artist/:id', async (req, res) => {
   try {
     const artist = await artistModel.findById(req.params.id);
@@ -56,6 +71,9 @@ getRouter.get('/artist/:id', async (req, res) => {
   }
 });
 
+/**
+ * Busca una playlist en la base de datos
+ */
 getRouter.get('/playlist', async (req, res) => {
   const filter = req.query.name?{name: req.query.name.toString()}:{};
   try {
@@ -69,6 +87,10 @@ getRouter.get('/playlist', async (req, res) => {
   }
 });
 
+
+/**
+ * Busca una playlist por id en la base de datos
+ */
 getRouter.get('/playlist/:id', async (req, res) => {
   try {
     const playlist = await playlistModel.findById(req.params.id);

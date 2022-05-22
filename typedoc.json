@@ -1,6 +1,15 @@
 {
   "entryPoints": [
-    "./src/prueba.ts"
+    "./src/server.ts",
+    "./src/routers/defaultRouter.ts",
+    "./src/routers/deleteRouter.ts",
+    "./src/routers/getRouter.ts",
+    "./src/routers/patchRouter.ts",
+    "./src/routers/postRouter.ts",
+    "./src/models/artist.ts",
+    "./src/models/song.ts",
+    "./src/models/playlist.ts",
+    "./src/data/mongoose.ts"
   ],
   "out": "./docs"
 }
