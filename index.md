@@ -650,3 +650,7 @@ connect(mongoDBUrl, {
   console.log('Something went wrong when conecting to the database');
 });
 ```
+
+## Heroku y MongoDB
+
+El proyecto estará desplegado en la dirección https://grupojapp.herokuapp.com/ mediante el uso de heruko, y estará conectado a una base de daatos de mongoDB de forma que se pueda hacer un seguimiento de los cambios de la misma.
